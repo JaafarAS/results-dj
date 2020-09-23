@@ -1,0 +1,13 @@
+@font-face{
+    font-family: 'Tajawal';
+    src:('../fonts/Tajawal-Regular.ttf') format("truetype"),
+    local('Tajawal');
+}
+
+html, body{
+    direction: rtl;
+    text-align: center;
+}
+body{
+    font-family: Tajawal;
+}

@@ -1,0 +1,385 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">
+    <title>JAS</title>
+</head>
+<body>
+
+    <h1 class="p-4">نتائج الامتحانات النهائية</h1>
+    <h3>الدور الاول</h3>
+    <h3> لسنة 2019-2020</h3>
+    
+   <h2 class="p-4">اسم الطالب : {{file.user.first_name}}</h2>
+   <h3>{{file.user_type}}</h3>
+
+   {% if file.user_type == 'المرحلة الاولى'%}
+   <div class="container">
+     <div class="row" >
+      <div class="col-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ت</th>
+              <th scope="col">المادة </th>
+              <th scope="col">التقدير </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td> برمجة </td>
+              <td>{{file.computer_programming}}</td>
+             
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>ورشة الاكترونية   </td>
+              <td>{{file.electric_workshop}}</td>
+              
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td> اساسيات الهندسة الكهربائية  </td>
+              <td>{{file.electrical_eng}}</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>   رياضيات </td>
+              <td>{{file.mathematics}}</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>  تصميم منطقي </td>
+              <td>{{file.digital_logic}}</td>
+            </tr>
+          
+          <tr>
+              <th scope="row">6</th>
+              <td>   حقوق الانسان  </td>
+              <td>{{file.human_rights}}</td>
+            </tr>
+      
+            <tr>
+              <th scope="row">7</th>
+              <td>  فيزياء   </td>
+              <td>{{file.pysics}}</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>  مبادىء الحاسوب  </td>
+              <td>{{file.computer_principles}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-4">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">النتيجة </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.result_1}} </h5>
+            
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">نتائج التحميل </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.download_1}} </h5>
+           
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">ملاحظات   </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.notice_1}}</h5>
+           
+          </div>
+      </div>
+
+     
+
+     </div>
+    </div>
+   </div>
+   {% endif %}
+
+   {% if file.user_type == 'المرحلة الثانية'%}
+   <div class="container">
+     <div class="row" >
+      <div class="col-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ت</th>
+              <th scope="col">المادة </th>
+              <th scope="col">التقدير </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td> معالجة دقيقة  </td>
+              <td>{{file.technical_microprocessors}}</td>
+             
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td> انظمة التشغيل  </td>
+              <td>{{file.operating_system}}</td>
+              
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td> نظم رقمية  </td>
+              <td>{{file.digital_system}}</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>   اساسيات الهندسة الكترونية  </td>
+              <td>{{file.electronice_eng}}</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>  هياكل بيانات </td>
+              <td>{{file.data_structure}}</td>
+            </tr>
+          
+          <tr>
+              <th scope="row">6</th>
+              <td>  البرمجة الكيانية   </td>
+              <td>{{file.object_oriened_programming}}</td>
+            </tr>
+      
+            <tr>
+              <th scope="row">7</th>
+              <td>   رياضيات هندسية    </td>
+              <td>{{file.eng_mathematics}}</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>  التدريب </td>
+              <td>{{file.training_2}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-4">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">النتيجة </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.result_2}} </h5>
+            
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">نتائج التحميل </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.download_2}} </h5>
+           
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">ملاحظات   </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.notice_2}}</h5>
+           
+          </div>
+      </div>
+
+     
+
+     </div>
+    </div>
+   </div>
+   {% endif %}
+
+   {% if file.user_type == 'المرحلة الثالثة'%}
+   <div class="container">
+     <div class="row" >
+      <div class="col-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ت</th>
+              <th scope="col">المادة </th>
+              <th scope="col">التقدير </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>هندسة البرمجيات </td>
+              <td>{{file.software_eng}}</td>
+             
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>هندسة اتصالات </td>
+              <td>{{file.communication}}</td>
+              
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>معمارية الحاسوب </td>
+              <td>{{file.computer_architecture}}</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td> رياضيات هندسة متقدمة </td>
+              <td>{{file.adv_eng_mathematics}}</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td> لغة جافا </td>
+              <td>{{file.java}}</td>
+            </tr>
+          
+          <tr>
+              <th scope="row">6</th>
+              <td>  قواعد بيانات </td>
+              <td>{{file.database}}</td>
+            </tr>
+      
+            <tr>
+              <th scope="row">7</th>
+              <td>   معالجة الاشارة الرقمية </td>
+              <td>{{file.digital_signal_processing}}</td>
+            </tr>
+            <tr>
+              <th scope="row">8</th>
+              <td>  التدريب </td>
+              <td>{{file.training_3}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-4">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">النتيجة </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.result_3}} </h5>
+            
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">نتائج التحميل </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.download_3}} </h5>
+           
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">ملاحظات   </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.notice_3}}</h5>
+           
+          </div>
+      </div>
+
+     
+
+     </div>
+    </div>
+   </div>
+   {% endif %}
+
+   {% if file.user_type == 'المرحلة الرابعة'%}
+   <div class="container">
+     <div class="row" >
+      <div class="col-8">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ت</th>
+              <th scope="col">المادة </th>
+              <th scope="col">التقدير </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td> أمنية الحاسوب و البيانات  </td>
+              <td>{{file.computer_and_data_security}}</td>
+             
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td> سيطرة الحاسوب  </td>
+              <td>{{file.computer_control}}</td>
+              
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>شبكات الحاسوب   </td>
+              <td>{{file.computer_networks}}</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>   معالجة الصور الرقمية  </td>
+              <td>{{file.digital_image_processing}}</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>  التعشيق بالحاسوب  </td>
+              <td>{{file.computer_interface}}</td>
+            </tr>
+          
+          <tr>
+              <th scope="row">6</th>
+              <td>  انظمة الزمن الحقيقي  </td>
+              <td>{{file.real_time_systems}}</td>
+            </tr>
+      
+            <tr>
+              <th scope="row">7</th>
+              <td>     هندسة برمجيات متقدمة  </td>
+              <td>{{file.advance_software_eng}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="col-4">
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">النتيجة </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.result_4}} </h5>
+            
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">نتائج التحميل </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.download_4}} </h5>
+           
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header">ملاحظات   </div>
+          <div class="card-body">
+            <h5 class="card-title"> {{file.notice_4}}</h5>
+           
+          </div>
+      </div>
+
+     
+
+     </div>
+    </div>
+   </div>
+   {% endif %}
+
+
+<div class="p-5">by JAS</div>
+  <script src="{% static 'accounts/js/jquery-3.5.1.slim.min.js' %}"></script>
+  <script src="{% static 'accounts/js/popper.min.js' %}"></script>
+  <script src="{% static 'accounts/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'accounts/js/fontawesome-all.min.js' %}"></script>
+</body>
+</html>
+
+

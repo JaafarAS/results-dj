@@ -5,26 +5,26 @@ from django.dispatch import receiver
 # Create your models here.
 
 
-class profile(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
 
     USER_TYPE=[
-        ('first','المرحلة الاولى'),
-        ('second','المرحلة الثانية '),
-        ('third','المرحلة الثالثة'),
-        ('fourth', 'المرحلة الرابعة'),
+        ('المرحلة الاولى','المرحلة الاولى'),
+        ('المرحلة الثانية','المرحلة الثانية'),
+        ('المرحلة الثالثة','المرحلة الثالثة'),
+        ('المرحلة الرابعة', 'المرحلة الرابعة'),
     ] 
     user_type = models.CharField(max_length=30, choices=USER_TYPE , null=True , blank= True)
 
 
     
     EVALUATE=[
-        ('franchise', 'امتياز'),
-        ('very_good', 'جيد جداً'),
-        ('good', 'جيد'),
-        ('average', 'متوسط'),
-        ('passable', 'مقبول'),
-        ('weak', 'ضعيف'),
+        ('امتياز', 'امتياز'),
+        ('جيد جداً', 'جيد جداً'),
+        ('جيد', 'جيد'),
+        ('متوسط', 'متوسط'),
+        ('مقبول', 'مقبول'),
+        ('ضعيف', 'ضعيف'),
     ]
 
     computer_programming = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
@@ -35,6 +35,10 @@ class profile(models.Model):
     human_rights = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
     pysics = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
     computer_principles = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
+
+    result_1 = models.CharField(max_length=30, null=True , blank= True)
+    download_1 = models.CharField(max_length=30,  null=True , blank= True)
+    notice_1 = models.CharField(max_length=30,  null=True , blank= True)
     
 
     technical_microprocessors = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
@@ -47,6 +51,11 @@ class profile(models.Model):
     training_2 = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
 
 
+    result_2 = models.CharField(max_length=30, null=True , blank= True)
+    download_2 = models.CharField(max_length=30,  null=True , blank= True)
+    notice_2 = models.CharField(max_length=30,  null=True , blank= True)
+    
+
 
     communication = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
     software_eng = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
@@ -58,6 +67,12 @@ class profile(models.Model):
     training_3 = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
 
 
+    result_3 = models.CharField(max_length=30, null=True , blank= True)
+    download_3 = models.CharField(max_length=30,  null=True , blank= True)
+    notice_3 = models.CharField(max_length=30,  null=True , blank= True)
+    
+
+
 
     computer_and_data_security = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
     computer_control = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
@@ -66,14 +81,19 @@ class profile(models.Model):
     computer_interface = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
     real_time_systems = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
     advance_software_eng = models.CharField(max_length=30, choices=EVALUATE , null=True , blank= True)
+
+    result_4 = models.CharField(max_length=30, null=True , blank= True)
+    download_4 = models.CharField(max_length=30,  null=True , blank= True)
+    notice_4 = models.CharField(max_length=30,  null=True , blank= True)
+    
   
 
     def __str__(self):
-        return str(self.user)
+        return str(self.user.first_name)
 
 @receiver(post_save , sender=User)
 def create_profile(sender,instance , created , **kwargs):
     if created:
-        profile.objects.create(
+        Profile.objects.create(
             user = instance
         )
